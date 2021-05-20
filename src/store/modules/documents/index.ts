@@ -3,25 +3,25 @@ import {
   CommitOptions,
   DispatchOptions,
   Module,
-} from 'vuex';
+} from "vuex";
 
 // TODO: How to surpass cyclical dependency linting errors cleanly?
 // eslint-disable-next-line import/no-cycle
-import { RootState } from '@/store';
+import {RootState} from "@/store";
 
-import { state } from './state';
+import {state} from "./state";
 // eslint-disable-next-line import/no-cycle
-import { getters, Getters } from './getters';
-import { mutations, Mutations } from './mutations';
+import {getters, Getters} from "./getters";
+import {mutations, Mutations} from "./mutations";
 // eslint-disable-next-line import/no-cycle
-import { actions, Actions } from './actions';
+import {actions, Actions} from "./actions";
 
-import type { State } from './state';
+import type {State} from "./state";
 
-export { State };
+export {State};
 
-export type DocumentsStore<S = State> = Omit<VuexStore<S>, 'getters' | 'commit' | 'dispatch'>
-& {
+export type DocumentsStore<S = State> = Omit<VuexStore<S>, "getters" | "commit" | "dispatch">
+  & {
   commit<K extends keyof Mutations, P extends Parameters<Mutations[K]>[1]>(
     key: K,
     payload: P,

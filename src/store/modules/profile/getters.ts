@@ -1,11 +1,10 @@
-import { GetterTree } from 'vuex';
-
-import type { UserProfileName, UserRoles } from '@/@types';
+import {GetterTree} from "vuex";
 
 // eslint-disable-next-line import/no-cycle
-import { RootState } from '@/store';
+import {RootState} from "@/store";
+import type {UserProfileName, UserRoles} from "@/@types";
 
-import { State } from './state';
+import {State} from "./state";
 
 export type Getters = {
   profile(state: State): UserProfileName;
@@ -15,8 +14,8 @@ export type Getters = {
 }
 
 export const getters: GetterTree<State, RootState> & Getters = {
-  profile: (state) => state.profileData,
-  roles: (state) => state.rolesData,
-  isClient: (state) => state.profileData === 'client',
-  isAdmin: (state) => state.profileData === 'admin',
+  profile  : (state) => state.profileData,
+  roles    : (state) => state.rolesData,
+  isClient : (state) => state.profileData === "client",
+  isAdmin  : (state) => state.profileData === "admin",
 };

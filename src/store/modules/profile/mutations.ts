@@ -1,9 +1,9 @@
-import { MutationTree } from 'vuex';
+import {MutationTree} from "vuex";
 
-import type { UserProfileName, UserRoles } from '@/@types';
+import type {UserProfileName, UserRoles} from "@/@types";
 
-import { State } from './state';
-import { ProfileMutationTypes as MutationTypes } from './mutation-types';
+import {State} from "./state";
+import {ProfileMutationTypes as MutationTypes} from "./mutation-types";
 
 export type Mutations<S = State> = {
   [MutationTypes.SET_PROFILE](state: S, payload: UserProfileName): void;

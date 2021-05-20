@@ -3,24 +3,24 @@ import {
   DispatchOptions,
   CommitOptions,
   Module,
-} from 'vuex';
+} from "vuex";
 
 // TODO: How to surpass cyclical dependency linting errors cleanly?
 // eslint-disable-next-line import/no-cycle
-import { RootState } from '@/store';
+import {RootState} from "@/store";
 
-import { state } from './state';
+import {state} from "./state";
 // eslint-disable-next-line import/no-cycle
-import { actions, Actions } from './actions';
+import {actions, Actions} from "./actions";
 // eslint-disable-next-line import/no-cycle
-import { getters, Getters } from './getters';
-import { mutations, Mutations } from './mutations';
+import {getters, Getters} from "./getters";
+import {mutations, Mutations} from "./mutations";
 
-import type { State } from './state';
+import type {State} from "./state";
 
-export { State };
+export {State};
 
-export type ProfileStore<S = State> = Omit<VuexStore<S>, 'getters' | 'commit' | 'dispatch'> & {
+export type ProfileStore<S = State> = Omit<VuexStore<S>, "getters" | "commit" | "dispatch"> & {
   commit<K extends keyof Mutations, P extends Parameters<Mutations[K]>[1]>(
     key: K,
     payload: P,
@@ -47,5 +47,5 @@ export const store: Module<State, RootState> = {
   actions,
   // TODO: With namespaced option turned on, having problem how to use dispatch with action types...
   // But without it, a bigger store might have clashes in namings
-  namespaced: true,
+  namespaced : true,
 };

@@ -3,7 +3,7 @@
     alt="Vue logo"
     src="./assets/logo.png"
   >
-  <HelloWorld msg="Using Vuex 4 (beta + Vue 3.0) Modules in TypeScript!" />
+  <HelloWorld msg="Using Vuex 4 (beta + Vue 3.0) Modules in TypeScript!"/>
 
   <hr
     id="quite-neat-divider"
@@ -11,7 +11,7 @@
   >
 
   <h3>
-    {{ isClient ? 'User is Client' : (isAdmin ? 'User is Admin' : 'No clue who the heck...') }}
+    {{ isClient ? "User is Client" : (isAdmin ? "User is Admin" : "No clue who the heck...") }}
   </h3>
   <button @click.prevent="fetchDocuments()">
     Fetch documents
@@ -19,17 +19,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { mapGetters } from 'vuex';
+import {defineComponent} from "vue";
+import {mapGetters} from "vuex";
 
-import { useStore } from '@/store';
-import { DocumentsActionTypes } from '@/store/modules/documents/action-types';
+import {useStore} from "@/store";
+import {DocumentsActionTypes} from "@/store/modules/documents/action-types";
 
-import HelloWorld from '@/components/HelloWorld.vue';
+import HelloWorld from "@/components/HelloWorld.vue";
 
 export default defineComponent({
-  name: 'App',
-  components: {
+  name       : "App",
+  components : {
     HelloWorld,
   },
   setup() {
@@ -37,9 +37,9 @@ export default defineComponent({
 
     async function fetchDocuments() {
       try {
-        await store.dispatch(DocumentsActionTypes.FETCH_DOCUMENTS, '1');
+        await store.dispatch(DocumentsActionTypes.FETCH_DOCUMENTS, "1");
       } catch (error) {
-        console.error('fetchDocuments', error);
+        console.error("fetchDocuments", error);
       }
     }
 
@@ -47,8 +47,8 @@ export default defineComponent({
       fetchDocuments,
     };
   },
-  computed: {
-    ...mapGetters('profile', ['isClient', 'isAdmin']),
+  computed : {
+    ...mapGetters("profile", ["isClient", "isAdmin"]),
   },
 });
 </script>

@@ -1,10 +1,10 @@
-import { ActionTree } from 'vuex';
+import {ActionTree} from "vuex";
 
 // eslint-disable-next-line import/no-cycle
-import { RootState } from '@/store';
+import {RootState} from "@/store";
 
-import { State } from './state';
-import { ProfileActionTypes } from './action-types';
+import {State} from "./state";
+import {ProfileActionTypes} from "./action-types";
 
 // TODO: How to configure a module without any actions?
 
@@ -21,5 +21,6 @@ export interface Actions {
 
 export const actions: ActionTree<State, RootState> & Actions = {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  [ProfileActionTypes.NON_ACTION]() {},
+  [ProfileActionTypes.NON_ACTION]() {
+  },
 };

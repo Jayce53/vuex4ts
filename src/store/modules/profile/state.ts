@@ -1,6 +1,6 @@
-import type { UserProfileName, UserRoles } from '@/@types';
+import type {UserProfileName, UserRoles} from "@/@types";
 
-const defaultProfile = 'client';
+const defaultProfile = "client";
 
 export type State = {
   profileData: UserProfileName;
@@ -8,6 +8,6 @@ export type State = {
 }
 
 export const state: State = {
-  profileData: defaultProfile,
-  rolesData: [],
+  profileData : defaultProfile,
+  rolesData   : [],
 };

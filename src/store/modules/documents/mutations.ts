@@ -1,9 +1,9 @@
-import { MutationTree } from 'vuex';
+import {MutationTree} from "vuex";
 
-import { UserDocuments } from '@/@types';
+import {UserDocuments} from "@/@types";
 
-import { State } from './state';
-import { DocumentsMutationTypes } from './mutation-types';
+import {State} from "./state";
+import {DocumentsMutationTypes} from "./mutation-types";
 
 export type Mutations<S = State> = {
   [DocumentsMutationTypes.SET_DATA](state: S, payload: UserDocuments): void;

@@ -1,9 +1,11 @@
-import { createApp } from "vue";
+import {createApp} from "vue";
 
-import { store } from "@/store";
+import {store} from "@/store";
 
 import App from "./App.vue";
 
-createApp(App).use(store).mount("#app");
+createApp(App)
+  .use(store)
+  .mount("#app");
 
 console.debug("mounted store", store);
